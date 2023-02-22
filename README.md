@@ -2,6 +2,6 @@
 Project for developing a todo list
 
 
-Front-end: React
-Back-end: Context API
-styles: Chakra-ui
+### Front-end: React
+### Back-end: Context API
+### styles: Chakra-ui
