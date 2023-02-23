@@ -3,7 +3,6 @@ import CardWrapper from "../cardWrapper";
 import InputWrapper from "../inputWrapper";
 function FormLogin({
   onSubmitHandler,
-  onChangeHandler,
   stateFormData = { email: "", password: "" },
 }) {
   return (
@@ -18,7 +17,6 @@ function FormLogin({
                 id="email"
                 name="email"
                 placeholder="Email"
-                onChange={onChangeHandler}
                 value={stateFormData.email.value}
               />
             </div>
@@ -29,15 +27,11 @@ function FormLogin({
                 id="password"
                 name="password"
                 placeholder="Password"
-                onChange={onChangeHandler}
                 value={stateFormData.email.password}
               />
             </div>
             <div className="flex flex-col items-center">
-              <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
-              >
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Login
               </button>
             </div>

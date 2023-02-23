@@ -5,7 +5,7 @@ export default function CardWrapper({ children, header }) {
   return (
     <div className="w-full h-full">
       <div className="flex justify-center items-center w-full h-full">
-        <Card className="w-1/4 h-2/5 flex justify-center items-center p-8 ">
+        <Card className="flex justify-center items-center p-8 ">
           <CardHeader>
             <Heading className="text-xl"> {header}</Heading>
           </CardHeader>
