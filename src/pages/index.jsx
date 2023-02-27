@@ -13,7 +13,7 @@ import FormLogin from "@/components/form/formLogin";
 import Notes from "../components/notes";
 import Auth from "@/components/auth";
 
-export default function Home({ baseApiUrl, profile }) {
+export default function Home({ baseApiUrl, profile, token }) {
   async function onSubmitHandler(e) {
     e.preventDefault();
     const [email, password] = e.target;
@@ -38,16 +38,13 @@ export default function Home({ baseApiUrl, profile }) {
     }
   }
 
-  function handleOnClickLogout(e) {
-    setLogout(e);
-  }
   return (
     <div className="bg-indigo-800 w-full h-full">
       <main className="w-full h-full">
         {!profile ? (
           <FormLogin onSubmitHandler={onSubmitHandler} />
         ) : (
-          <Auth profile={profile} baseApiUrl={baseApiUrl} />
+          <Auth profile={profile} baseApiUrl={baseApiUrl} token={token} />
         )}
       </main>
     </div>
@@ -66,6 +63,7 @@ export async function getServerSideProps(context) {
     props: {
       baseApiUrl,
       profile,
+      token,
     },
   };
 }

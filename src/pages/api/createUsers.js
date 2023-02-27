@@ -1,12 +1,12 @@
 import { app, database } from "../../../firebaseConfig";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, setDoc, doc } from "firebase/firestore";
 const dbInstance = collection(database, "users");
 
-export default function createTask(req, res) {
-  let data = req.body;
-  addDoc(dbInstance, {
-    email: data.email,
+export default async function createTask(req, res) {
+  const data = req.body;
+  await setDoc(doc(database, "users", data.email), {
+    id: data.email,
     password: data.password,
   });
-  res.status(200);
+  res.status(200).json({ okay: "okay" });
 }

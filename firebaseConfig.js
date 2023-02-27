@@ -1,19 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyB1m4__kO0GIwPM_AOK8ZzJfH-nH3VXs0s",
+  apiKey: "AIzaSyBbS-3zgsAvz1iW-CG6teB1DMtAMPAGVMY",
 
-  authDomain: "tarefas-d6339.firebaseapp.com",
+  authDomain: "todo-list-2417c.firebaseapp.com",
 
-  projectId: "tarefas-d6339",
+  projectId: "todo-list-2417c",
 
-  storageBucket: "tarefas-d6339.appspot.com",
+  storageBucket: "todo-list-2417c.appspot.com",
 
-  messagingSenderId: "31651370939",
+  messagingSenderId: "117683632709",
 
-  appId: "1:31651370939:web:31e1280ef6e3598cad569e",
+  appId: "1:117683632709:web:d0d09a432b58ad9235012c",
 
-  measurementId: "G-F06LFBZGNR",
+  measurementId: "G-XJQX226VLT",
 };
 
 const app = initializeApp(firebaseConfig);
