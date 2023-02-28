@@ -104,19 +104,22 @@ export default function Auth({ profile, baseApiUrl, token }) {
             <Card className=" h-full">
               <CardBody className="bg-neutral-100 rounded-xl flex flex-col justify-between">
                 <div className="flex flex-row justify-around items-center">
-                  <Avatar name={profile.id.split("@")[0]} />
+                  <Avatar
+                    name={profile.id.split("@")[0]}
+                    className="flex justify-center items-center"
+                  />
                   <p>{profile.id}</p>
                 </div>
                 <div className="flex items-center justify-center">
                   <button
-                    className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mx-6 w-full"
+                    className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mx-4 w-full"
                     onClick={handleNewTask}
                   >
                     nova Tarefa
                   </button>
 
                   <button
-                    className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mx-6 w-full"
+                    className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mx-4 w-full"
                     onClick={handleOnClickLogout}
                   >
                     logout

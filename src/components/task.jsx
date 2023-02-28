@@ -57,7 +57,7 @@ export default function Task({
     });
   }
   return (
-    <Card className="w-fit h-min sm:m-8 m-1">
+    <Card className="w-fit h-min sm:m-4 m-2">
       <CardBody className={checkedState ? "bg-green-200" : "bg-slate-200"}>
         <div className="flex sm:flex-row flex-col p-4 sm:space-x-6">
           <Checkbox
@@ -70,18 +70,20 @@ export default function Task({
           >
             Feito
           </Checkbox>
-          <InputWrapper
-            placeholder="Sua tarefa"
-            value={values}
-            onChangeHandler={handleChange}
-            className="w-full my-2"
-          />
-          <button
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline  w-full my-2"
-            onClick={handleClickRemove}
-          >
-            deletar
-          </button>
+          <div className="flex flex-col ">
+            <InputWrapper
+              placeholder="Sua tarefa"
+              value={values}
+              onChangeHandler={handleChange}
+              className="w-full my-2"
+            />
+            <button
+              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline  w-full my-2"
+              onClick={handleClickRemove}
+            >
+              deletar
+            </button>
+          </div>
         </div>
       </CardBody>
     </Card>

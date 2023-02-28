@@ -32,7 +32,7 @@ export default function Notes({ baseApiUrl, token, reload }) {
 
   return (
     <Card className="w-full h-full sm:flex !contents">
-      <CardBody className="bg-neutral-100 rounded-xl flex flex-wrap overflow-auto w-full">
+      <CardBody className="bg-neutral-100 rounded-xl flex flex-wrap overflow-auto w-full sm:justify-between justify-center">
         {tasks.map((obj) => {
           return (
             <Task
