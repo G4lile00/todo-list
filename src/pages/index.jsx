@@ -13,7 +13,7 @@ import FormLogin from "@/components/form/formLogin";
 import Notes from "../components/notes";
 import Auth from "@/components/auth";
 
-export default function Home({ baseApiUrl, profile, token }) {
+export default function Home({ baseApiUrl, profile, auth }) {
   async function onSubmitHandler(e) {
     e.preventDefault();
     const [email, password] = e.target;
@@ -44,7 +44,7 @@ export default function Home({ baseApiUrl, profile, token }) {
         {!profile ? (
           <FormLogin onSubmitHandler={onSubmitHandler} />
         ) : (
-          <Auth profile={profile} baseApiUrl={baseApiUrl} token={token} />
+          <Auth profile={profile} baseApiUrl={baseApiUrl} token={auth} />
         )}
       </main>
     </div>
@@ -58,12 +58,15 @@ export async function getServerSideProps(context) {
   const baseApiUrl = `${origin}/api`;
 
   const { token } = getAppCookies(req);
+
+  const auth = token ? token : "";
+
   const profile = token ? verifyToken(token) : "";
   return {
     props: {
       baseApiUrl,
       profile,
-      token,
+      auth,
     },
   };
 }
