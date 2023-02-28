@@ -9,7 +9,9 @@ export default function CardWrapper({ children, header }) {
           <CardHeader>
             <Heading className="text-xl"> {header}</Heading>
           </CardHeader>
-          <CardBody>{children}</CardBody>
+          <CardBody className="flex flex-col items-center space-y-5">
+            {children}
+          </CardBody>
         </Card>
       </div>
     </div>

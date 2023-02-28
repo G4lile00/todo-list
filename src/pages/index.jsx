@@ -37,12 +37,35 @@ export default function Home({ baseApiUrl, profile, auth }) {
       Router.push("/");
     }
   }
+  async function onSubmitNewUser(e) {
+    e.preventDefault();
+    const [email, password] = e.target;
+    await fetch(baseApiUrl + "/createUsers", {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+      }),
+    });
+    onSubmitHandler(e);
+  }
 
   return (
     <div className="bg-indigo-800 w-full h-full">
       <main className="w-full h-full">
         {!profile ? (
-          <FormLogin onSubmitHandler={onSubmitHandler} />
+          <div className="h-full space-y-5">
+            <FormLogin
+              onSubmitHandler={onSubmitHandler}
+              onSubmitNewUser={onSubmitNewUser}
+            />
+          </div>
         ) : (
           <Auth profile={profile} baseApiUrl={baseApiUrl} token={auth} />
         )}
